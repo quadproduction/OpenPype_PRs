@@ -45,7 +45,7 @@ class CreateDailyReviewSessionServerAction(ServerAction):
         )
 
         self._cycle_timer = None
-        self._last_cyle_time = None
+        self._last_cycle_time = None
         self._day_delta = datetime.timedelta(days=1)
 
     def discover(self, session, entities, event):
@@ -121,7 +121,7 @@ class CreateDailyReviewSessionServerAction(ServerAction):
         seconds_delta, cycle_time = self._calculate_next_cycle_delta()
 
         # Store cycle time which will be used to create next timer
-        self._last_cyle_time = cycle_time
+        self._last_cycle_time = cycle_time
         # Create timer thread
         self._cycle_timer = threading.Timer(
             seconds_delta, self._timer_callback
@@ -133,10 +133,10 @@ class CreateDailyReviewSessionServerAction(ServerAction):
     def _timer_callback(self):
         if (
             self._cycle_timer is not None
-            and self._last_cyle_time is not None
+            and self._last_cycle_time is not None
         ):
             seconds_delta, cycle_time = self._calculate_next_cycle_delta()
-            self._last_cyle_time = cycle_time
+            self._last_cycle_time = cycle_time
 
             self._cycle_timer = threading.Timer(
                 seconds_delta, self._timer_callback
@@ -173,7 +173,7 @@ class CreateDailyReviewSessionServerAction(ServerAction):
         if not enabled_action_settings_by_project_id:
             self.log.info((
                 "There are no projects that have enabled"
-                " cycle review sesison creation"
+                " cycle review session creation"
             ))
 
         else:
@@ -198,7 +198,7 @@ class CreateDailyReviewSessionServerAction(ServerAction):
             project_id = review_session["project_id"]
             review_sessions_by_project_id[project_id].append(review_session)
 
-        # Prepare fill data for today's review sesison and yesterdays
+        # Prepare fill data for today's review session and yesterdays
         now = datetime.datetime.now()
         today_obj = datetime.datetime(
             now.year, now.month, now.day, 0, 0, 0

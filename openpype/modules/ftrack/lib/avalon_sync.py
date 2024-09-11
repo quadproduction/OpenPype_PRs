@@ -962,7 +962,7 @@ class SyncEntitiesFactory:
 
             self.entities_dict[parent_id]["children"].remove(ftrack_id)
 
-    def set_cutom_attributes(self):
+    def set_custom_attributes(self):
         self.log.debug("* Preparing custom attributes")
         # Get custom attributes and values
         custom_attrs, hier_attrs = get_openpype_attr(

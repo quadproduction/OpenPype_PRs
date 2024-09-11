@@ -15,7 +15,7 @@ def is_cache_resource(resource):
     return required.issubset(tags)
 
 
-def valdidate_files(files):
+def validate_files(files):
     for f in files:
         assert os.path.exists(f)
         assert f.endswith(".mcx") or f.endswith(".mcc")
@@ -77,7 +77,7 @@ class ValidateInstancerFrameRanges(pyblish.api.InstancePlugin,
 
             # Ensure all files exist (including ticks)
             # The remainder file paths should be the .mcx or .mcc files
-            valdidate_files(all_files)
+            validate_files(all_files)
 
             # Maya particle caches support substeps by saving out additional
             # files that end with a Tick60.mcx, Tick120.mcx, etc. suffix.

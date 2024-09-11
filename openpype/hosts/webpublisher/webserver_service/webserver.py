@@ -19,7 +19,7 @@ from openpype_modules.webpublisher.lib import (
 from .webpublish_routes import (
     RestApiResource,
     WebpublishRestApiResource,
-    HiearchyEndpoint,
+    HierarchyEndpoint,
     ProjectsEndpoint,
     ConfiguredExtensionsEndpoint,
     BatchPublishEndpoint,
@@ -59,11 +59,11 @@ def run_webserver(executable, upload_dir, host=None, port=None):
         projects_endpoint.dispatch
     )
 
-    hiearchy_endpoint = HiearchyEndpoint(resource)
+    hierarchy_endpoint = HierarchyEndpoint(resource)
     server_manager.add_route(
         "GET",
         "/api/hierarchy/{project_name}",
-        hiearchy_endpoint.dispatch
+        hierarchy_endpoint.dispatch
     )
 
     configured_ext_endpoint = ConfiguredExtensionsEndpoint(resource)

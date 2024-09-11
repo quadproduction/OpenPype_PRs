@@ -554,7 +554,7 @@ class ContextDialog(QtWidgets.QDialog):
         main_splitter.setStretchFactor(0, 7)
         main_splitter.setStretchFactor(1, 3)
 
-        # Add confimation button to bottom right
+        # Add confirmation button to bottom right
         ok_btn = QtWidgets.QPushButton("OK", self)
 
         buttons_layout = QtWidgets.QHBoxLayout()
@@ -602,7 +602,7 @@ class ContextDialog(QtWidgets.QDialog):
             self._on_controller_refresh
         )
 
-        # Set stylehseet and resize window on first show
+        # Set stylesheet and resize window on first show
         self._first_show = True
         self._visible = False
 

@@ -202,7 +202,7 @@ class IntegrateAsset(pyblish.api.InstancePlugin):
         file_transactions.finalize()
 
     def filter_representations(self, instance):
-        # Prepare repsentations that should be integrated
+        # Prepare representation that should be integrated
         repres = instance.data.get("representations")
         # Raise error if instance don't have any representations
         if not repres:
@@ -626,7 +626,7 @@ class IntegrateAsset(pyblish.api.InstancePlugin):
         if "{originalDirname}" in template:
             # store as originalDirname only original value without project root
             # if instance collected originalDirname is present, it should be
-            # used for all represe
+            # used for all repres
             # from temp to final
             original_directory = (
                 instance.data.get("originalDirname") or instance_stagingdir)
@@ -652,7 +652,7 @@ class IntegrateAsset(pyblish.api.InstancePlugin):
         #       formatting
         path_template_obj = anatomy.templates_obj[template_name]["path"]
 
-        # Treat template with 'orignalBasename' in special way
+        # Treat template with 'originalBasename' in special way
         if "{originalBasename}" in template:
             # Remove 'frame' from template data
             template_data.pop("frame", None)

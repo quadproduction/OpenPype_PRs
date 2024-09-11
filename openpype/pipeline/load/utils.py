@@ -781,7 +781,7 @@ def is_compatible_loader(Loader, context):
 
 
 def loaders_from_repre_context(loaders, repre_context):
-    """Return compatible loaders for by representaiton's context."""
+    """Return compatible loaders for by representation's context."""
 
     return [
         loader
@@ -859,7 +859,7 @@ def filter_containers(containers, project_name):
 
     Args:
         containers (Iterable[dict]): List of containers referenced into scene.
-        project_name (str): Name of project in which context shoud look for
+        project_name (str): Name of project in which context should look for
             versions.
 
     Returns:
@@ -914,13 +914,13 @@ def filter_containers(containers, project_name):
         hero=True,
         fields=["_id", "parent", "type"]
     )
-    verisons_by_id = {}
+    versions_by_id = {}
     versions_by_subset_id = collections.defaultdict(list)
     hero_version_ids = set()
     for version_doc in version_docs:
         version_id = version_doc["_id"]
         # Store versions by their ids
-        verisons_by_id[version_id] = version_doc
+        versions_by_id[version_id] = version_doc
         # There's no need to query subsets for hero versions
         #   - they are considered as latest?
         if version_doc["type"] == "hero_version":
@@ -964,7 +964,7 @@ def filter_containers(containers, project_name):
         if version_id in outdated_version_ids:
             outdated_containers.append(container)
 
-        elif version_id not in verisons_by_id:
+        elif version_id not in versions_by_id:
             log.debug((
                 "Representation on container '{}' has an invalid version."
                 " It is missing in the database."

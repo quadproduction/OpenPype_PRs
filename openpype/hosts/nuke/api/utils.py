@@ -55,7 +55,7 @@ def bake_gizmos_recursively(in_group=None):
     """Converting a gizmo to group
 
     Arguments:
-        is_group (nuke.Node)[optonal]: group node or all nodes
+        is_group (nuke.Node)[optional]: group node or all nodes
     """
     from .lib import maintained_selection
     if in_group is None:

@@ -23,7 +23,7 @@ class HostDirmap(object):
     """Abstract class for running dirmap on a workfile in a host.
 
     Dirmap is used to translate paths inside of host workfile from one
-    OS to another. (Eg. arstist created workfile on Win, different artists
+    OS to another. (Eg. artist created workfile on Win, different artists
     opens same file on Linux.)
 
     Expects methods to be implemented inside of host:

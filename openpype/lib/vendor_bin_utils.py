@@ -175,7 +175,7 @@ def find_tool_in_custom_paths(paths, tool, validation_func=None):
             If not passed only 'find_executable' is used to be able identify
             if path is valid.
 
-    Reuturns:
+    Returns:
         Union[str, None]: Path to validated executable or None if was not
             found.
     """

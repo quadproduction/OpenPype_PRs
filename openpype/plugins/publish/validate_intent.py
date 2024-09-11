@@ -7,7 +7,7 @@ from openpype.pipeline.publish import PublishValidationError
 class ValidateIntent(pyblish.api.ContextPlugin):
     """Validate intent of the publish.
 
-    It is required to fill the intent of this publish. Chech the log
+    It is required to fill the intent of this publish. Check the log
     for more details
     """
 

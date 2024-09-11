@@ -254,7 +254,7 @@ class RootEntity(BaseItemEntity):
             callback()
 
     def on_child_change(self, _child_entity):
-        """Whan any children has changed."""
+        """When any children has changed."""
         self.on_change()
 
     def collect_static_entities_by_path(self):

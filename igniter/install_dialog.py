@@ -435,7 +435,7 @@ class InstallDialog(QtWidgets.QDialog):
         """Validate if entered url is ok.
 
         Returns:
-            True if url is valid monogo string.
+            True if url is valid mongo string.
 
         """
         if self.mongo_url == "":

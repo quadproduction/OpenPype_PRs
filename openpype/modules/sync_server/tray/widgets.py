@@ -962,7 +962,7 @@ class SyncRepresentationErrorWidget(QtWidgets.QWidget):
 
 
 class HorizontalHeader(QtWidgets.QHeaderView):
-    """Reiplemented QHeaderView to contain clickable changeable button"""
+    """Reimplemented QHeaderView to contain clickable changeable button"""
     def __init__(self, parent=None):
         super(HorizontalHeader, self).__init__(QtCore.Qt.Horizontal, parent)
         self._parent = parent

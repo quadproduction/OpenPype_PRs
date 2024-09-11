@@ -206,13 +206,13 @@ class DJVViewAction(BaseAction):
                 "message": "Couldn't find DJV executable."
             }
 
-        filpath = os.path.normpath(event_values["path"])
+        filepath = os.path.normpath(event_values["path"])
 
         cmd = [
             # DJV path
             str(executable),
             # PATH TO COMPONENT
-            filpath
+            filepath
         ]
 
         try:
@@ -225,7 +225,7 @@ class DJVViewAction(BaseAction):
             return {
                 "success": False,
                 "message": "File \"{}\" was not found.".format(
-                    os.path.basename(filpath)
+                    os.path.basename(filepath)
                 )
             }
 

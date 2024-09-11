@@ -5,7 +5,7 @@ except Exception:
     cmp_to_key = None
 
 
-def existence_comaprison(item_a, item_b):
+def existence_comparison(item_a, item_b):
     if not item_a and not item_b:
         return 0
     if not item_a:
@@ -18,13 +18,13 @@ def existence_comaprison(item_a, item_b):
 def task_name_sorter(item_a, item_b):
     asset_version_a = item_a["asset_version"]
     asset_version_b = item_b["asset_version"]
-    asset_version_comp = existence_comaprison(asset_version_a, asset_version_b)
+    asset_version_comp = existence_comparison(asset_version_a, asset_version_b)
     if asset_version_comp is not None:
         return asset_version_comp
 
     task_a = asset_version_a["task"]
     task_b = asset_version_b["task"]
-    task_comp = existence_comaprison(task_a, task_b)
+    task_comp = existence_comparison(task_a, task_b)
     if task_comp is not None:
         return task_comp
 

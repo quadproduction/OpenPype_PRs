@@ -129,23 +129,23 @@ class InstanceView(OverviewView):
             return
         model = index.model()
 
-        chilren_indexes_checked = []
-        chilren_indexes_unchecked = []
+        children_indexes_checked = []
+        children_indexes_unchecked = []
         for idx in range(model.rowCount(index)):
             child_index = model.index(idx, 0, index)
             if not child_index.data(Roles.IsEnabledRole):
                 continue
 
             if child_index.data(QtCore.Qt.CheckStateRole):
-                chilren_indexes_checked.append(child_index)
+                children_indexes_checked.append(child_index)
             else:
-                chilren_indexes_unchecked.append(child_index)
+                children_indexes_unchecked.append(child_index)
 
-        if chilren_indexes_checked:
-            to_change_indexes = chilren_indexes_checked
+        if children_indexes_checked:
+            to_change_indexes = children_indexes_checked
             new_state = False
         else:
-            to_change_indexes = chilren_indexes_unchecked
+            to_change_indexes = children_indexes_unchecked
             new_state = True
 
         for index in to_change_indexes:

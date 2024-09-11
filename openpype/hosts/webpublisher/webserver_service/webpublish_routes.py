@@ -98,7 +98,7 @@ class ProjectsEndpoint(ResourceRestApiEndpoint):
         )
 
 
-class HiearchyEndpoint(ResourceRestApiEndpoint):
+class HierarchyEndpoint(ResourceRestApiEndpoint):
     """Returns dictionary with context tree from assets."""
     async def get(self, project_name) -> Response:
         query_projection = {

@@ -184,7 +184,7 @@ class ValidateAttributesModel(BaseSettingsModel):
 
         if not success:
             raise BadRequestException(
-                "The attibutes can't be parsed as json object"
+                "The attributes can't be parsed as json object"
             )
         return value
 
@@ -220,7 +220,7 @@ class ValidateUnrealStaticMeshNameModel(BaseSettingsModel):
     enabled: bool = SettingsField(title="ValidateUnrealStaticMeshName")
     optional: bool = SettingsField(title="Optional")
     validate_mesh: bool = SettingsField(title="Validate mesh names")
-    validate_collision: bool = SettingsField(title="Validate collison names")
+    validate_collision: bool = SettingsField(title="Validate collision names")
 
 
 class ValidateCycleErrorModel(BaseSettingsModel):

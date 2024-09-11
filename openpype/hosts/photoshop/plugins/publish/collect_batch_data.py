@@ -8,7 +8,7 @@ Provides:
         - project_name
         - variant
 
-Code is practically copy of `openype/hosts/webpublish/collect_batch_data` as
+Code is practically copy of `openpype/hosts/webpublish/collect_batch_data` as
 webpublisher should be eventually ejected as an addon, eg. mentioned plugin
 shouldn't be pushed into general publish plugins.
 """

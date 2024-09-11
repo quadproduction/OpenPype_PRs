@@ -169,7 +169,7 @@ class ApplicationNotFound(Exception):
         )
 
 
-class ApplictionExecutableNotFound(Exception):
+class ApplicationExecutableNotFound(Exception):
     """Defined executable paths are not available on the machine."""
 
     def __init__(self, application):
@@ -196,7 +196,7 @@ class ApplictionExecutableNotFound(Exception):
             # Is good idea to pass new line symbol to exception message?
             exc_mgs += "\n" + details
         self.exc_msg = exc_mgs
-        super(ApplictionExecutableNotFound, self).__init__(exc_mgs)
+        super(ApplicationExecutableNotFound, self).__init__(exc_mgs)
 
 
 class ApplicationLaunchFailed(Exception):
@@ -532,7 +532,7 @@ class ApplicationManager:
         """
 
         if not launch_context.executable:
-            raise ApplictionExecutableNotFound(launch_context.application)
+            raise ApplicationExecutableNotFound(launch_context.application)
         return launch_context.launch()
 
     def launch(self, app_name, **data):
@@ -549,7 +549,7 @@ class ApplicationManager:
         Raises:
             ApplicationNotFound: Application was not found by entered
                 argument `app_name`.
-            ApplictionExecutableNotFound: Executables in application definition
+            ApplicationExecutableNotFound: Executables in application definition
                 were not found on this machine.
             ApplicationLaunchFailed: Something important for application launch
                 failed. Exception should contain explanation message,
@@ -789,7 +789,7 @@ class LaunchHook:
     platforms = set()
     # Set of launch types for which is available
     # - if empty then is available for all launch types
-    # - by default has 'local' which is most common reason for launc hooks
+    # - by default has 'local' which is most common reason for launch hooks
     launch_types = {LaunchTypes.local}
 
     def __init__(self, launch_context):

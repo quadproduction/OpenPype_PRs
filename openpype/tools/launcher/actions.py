@@ -4,7 +4,7 @@ from openpype import style
 from openpype import resources
 from openpype.lib import (
     Logger,
-    ApplictionExecutableNotFound,
+    ApplicationExecutableNotFound,
     ApplicationLaunchFailed
 )
 from openpype.pipeline import LauncherAction
@@ -74,7 +74,7 @@ class ApplicationAction(LauncherAction):
                 **self.data
             )
 
-        except ApplictionExecutableNotFound as exc:
+        except ApplicationExecutableNotFound as exc:
             details = exc.details
             msg = exc.msg
             log_msg = str(msg)

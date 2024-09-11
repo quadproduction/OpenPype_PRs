@@ -50,7 +50,7 @@ class CreateVrayROP(plugin.HoudiniCreator):
         ipr_rop.setPosition(instance_node.position() + hou.Vector2(0, -1))
         ipr_rop.parm("rop").set(instance_node.path())
 
-        parms = {
+        params = {
             "trange": 1,
             "SettingsEXR_bits_per_channel": "16"   # half precision
         }
@@ -63,8 +63,8 @@ class CreateVrayROP(plugin.HoudiniCreator):
                 )
             # Setting render_export_mode to "2" because that's for
             # "Export only" ("1" is for "Export & Render")
-            parms["render_export_mode"] = "2"
-            parms["render_export_filepath"] = scene_filepath
+            params["render_export_mode"] = "2"
+            params["render_export_filepath"] = scene_filepath
 
         if self.selected_nodes:
             # set up the render camera from the selected node
@@ -72,7 +72,7 @@ class CreateVrayROP(plugin.HoudiniCreator):
             for node in self.selected_nodes:
                 if node.type().name() == "cam":
                     camera = node.path()
-            parms.update({
+            params.update({
                 "render_camera": camera or ""
             })
 
@@ -101,7 +101,7 @@ class CreateVrayROP(plugin.HoudiniCreator):
             # move the render element node next to the vray renderer node
             re_rop.setPosition(instance_node.position() + hou.Vector2(0, 1))
             re_path = re_rop.path()
-            parms.update({
+            params.update({
                 "use_render_channels": 1,
                 "SettingsOutput_img_file_path": filepath,
                 "render_network_render_channels": re_path
@@ -113,16 +113,16 @@ class CreateVrayROP(plugin.HoudiniCreator):
                 subset_name=subset_name,
                 fmt="$F4.{ext}".format(ext=ext)
             )
-            parms.update({
+            params.update({
                 "use_render_channels": 0,
                 "SettingsOutput_img_file_path": filepath
             })
 
         custom_res = pre_create_data.get("override_resolution")
         if custom_res:
-            parms.update({"override_camerares": 1})
+            params.update({"override_camerares": 1})
 
-        instance_node.setParms(parms)
+        instance_node.setParms(params)
 
         # lock parameters from AVALON
         to_lock = ["family", "id"]

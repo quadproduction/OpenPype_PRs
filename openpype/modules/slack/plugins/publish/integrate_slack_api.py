@@ -221,7 +221,7 @@ class IntegrateSlackAPI(pyblish.api.InstancePlugin):
         return group_id
 
     def _translate_users(self, message, users, groups):
-        """Replace all occurences of @mentions with proper <@name> format."""
+        """Replace all occurrences of @mentions with proper <@name> format."""
         matches = re.findall(r"(?<!<)@\S+", message)
         in_quotes = re.findall(r"(?<!<)(['\"])(@[^'\"]+)", message)
         for item in in_quotes:

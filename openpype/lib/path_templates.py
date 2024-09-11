@@ -142,7 +142,7 @@ class StringTemplate(object):
         """ Figure out with whole formatting.
 
         Separate advanced keys (*Like '{project[name]}') from string which must
-        be formatted separatelly in case of missing or incomplete keys in data.
+        be formatted separately in case of missing or incomplete keys in data.
 
         Args:
             data (dict): Containing keys to be filled into template.
@@ -352,7 +352,7 @@ class TemplatesDict(object):
         Returns:
             TemplatesResultDict: Output `TemplateResult` have `strict`
                 attribute set to True so accessing unfilled keys in templates
-                will raise exceptions with explaned error.
+                will raise exceptions with explained error.
         """
         # Create a copy of inserted data
         data = copy.deepcopy(in_data)
@@ -553,10 +553,10 @@ class TemplatePartResult:
         #   - value from filling data
         #   Example: {"version": 1}
         self._used_values = {}
-        # Used values stored by key with all modifirs
+        # Used values stored by key with all modifiers
         #   - value is already formatted string
         #   Example: {"version:0>3": "001"}
-        self._realy_used_values = {}
+        self._really_used_values = {}
         # Concatenated string output after formatting
         self._output = ""
         # Is this result from optional part
@@ -578,7 +578,7 @@ class TemplatePartResult:
             if other.optional and not other.solved:
                 return
             self._used_values.update(other.used_values)
-            self._realy_used_values.update(other.realy_used_values)
+            self._really_used_values.update(other.realy_used_values)
 
         else:
             raise TypeError("Cannot add data from \"{}\" to \"{}\"".format(
@@ -624,7 +624,7 @@ class TemplatePartResult:
 
     @property
     def realy_used_values(self):
-        return self._realy_used_values
+        return self._really_used_values
 
     @property
     def used_values(self):
@@ -657,7 +657,7 @@ class TemplatePartResult:
         return self.split_keys_to_subdicts(new_used_values)
 
     def add_realy_used_value(self, key, value):
-        self._realy_used_values[key] = value
+        self._really_used_values[key] = value
 
     def add_used_value(self, key, value):
         self._used_values[key] = value

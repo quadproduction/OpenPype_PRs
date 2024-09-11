@@ -35,7 +35,7 @@ class DeleteOldVersions(BaseAction):
 
     dbcon = AvalonMongoDB()
 
-    inteface_title = "Choose your preferences"
+    interface_title = "Choose your preferences"
     splitter_item = {"type": "label", "value": "---"}
     sequence_splitter = "__sequence_splitter__"
 
@@ -135,7 +135,7 @@ class DeleteOldVersions(BaseAction):
 
         return {
             "items": items,
-            "title": self.inteface_title
+            "title": self.interface_title
         }
 
     def launch(self, session, entities, event):
@@ -304,7 +304,7 @@ class DeleteOldVersions(BaseAction):
         dir_paths = {}
         file_paths_by_dir = collections.defaultdict(list)
         for repre in repres:
-            file_path, seq_path = self.path_from_represenation(repre, anatomy)
+            file_path, seq_path = self.path_from_representation(repre, anatomy)
             if file_path is None:
                 self.log.warning((
                     "Could not format path for representation \"{}\""
@@ -437,7 +437,7 @@ class DeleteOldVersions(BaseAction):
         size = 0
 
         for dir_path in dir_paths:
-            # Delete all files and fodlers in dir path
+            # Delete all files and folders in dir path
             for root, dirs, files in os.walk(dir_path, topdown=False):
                 for name in files:
                     file_path = os.path.join(root, name)
@@ -550,7 +550,7 @@ class DeleteOldVersions(BaseAction):
 
         return size
 
-    def path_from_represenation(self, representation, anatomy):
+    def path_from_representation(self, representation, anatomy):
         try:
             template = representation["data"]["template"]
 

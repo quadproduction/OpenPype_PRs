@@ -42,7 +42,7 @@ class CreateArnoldRop(plugin.HoudiniCreator):
             subset_name=subset_name,
             ext=ext,
         )
-        parms = {
+        params = {
             # Render frame range
             "trange": 1,
 
@@ -57,10 +57,10 @@ class CreateArnoldRop(plugin.HoudiniCreator):
                     export_dir=hou.text.expandString("$HIP/pyblish/ass/"),
                     subset_name=subset_name,
                 )
-            parms["ar_ass_export_enable"] = 1
-            parms["ar_ass_file"] = ass_filepath
+            params["ar_ass_export_enable"] = 1
+            params["ar_ass_file"] = ass_filepath
 
-        instance_node.setParms(parms)
+        instance_node.setParms(params)
 
         # Lock any parameters in this list
         to_lock = ["family", "id"]

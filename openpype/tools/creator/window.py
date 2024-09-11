@@ -316,7 +316,7 @@ class CreatorWindow(QtWidgets.QDialog):
             self._variant_input.as_empty()
         elif subset_name.lower() in existing_subset_names_low:
             # validate existence of subset name with lowered text
-            #   - "renderMain" vs. "rensermain" mean same path item for
+            #   - "renderMain" vs. "rendermain" mean same path item for
             #   windows
             self._variant_input.as_exists()
         else:

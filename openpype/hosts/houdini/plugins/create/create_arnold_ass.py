@@ -43,7 +43,7 @@ class CreateArnoldAss(plugin.HoudiniCreator):
             hou.text.expandString("$HIP/pyblish/"),
             "{}.$F4{}".format(subset_name, self.ext)
         )
-        parms = {
+        params = {
             # Render frame range
             "trange": 1,
             # Arnold ROP settings
@@ -51,7 +51,7 @@ class CreateArnoldAss(plugin.HoudiniCreator):
             "ar_ass_export_enable": 1
         }
 
-        instance_node.setParms(parms)
+        instance_node.setParms(params)
 
         # Lock any parameters in this list
         to_lock = ["ar_ass_export_enable", "family", "id"]

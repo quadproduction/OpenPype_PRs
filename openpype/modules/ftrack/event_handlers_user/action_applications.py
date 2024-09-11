@@ -5,12 +5,12 @@ from openpype_modules.ftrack.lib import BaseAction
 from openpype.lib.applications import (
     ApplicationManager,
     ApplicationLaunchFailed,
-    ApplictionExecutableNotFound,
+    ApplicationExecutableNotFound,
     CUSTOM_LAUNCH_APP_GROUPS
 )
 
 
-class AppplicationsAction(BaseAction):
+class ApplicationsAction(BaseAction):
     """Applications Action class."""
 
     type = "Application"
@@ -22,7 +22,7 @@ class AppplicationsAction(BaseAction):
     icon_url = os.environ.get("OPENPYPE_STATICS_SERVER")
 
     def __init__(self, *args, **kwargs):
-        super(AppplicationsAction, self).__init__(*args, **kwargs)
+        super(ApplicationsAction, self).__init__(*args, **kwargs)
 
         self.application_manager = ApplicationManager()
 
@@ -168,7 +168,7 @@ class AppplicationsAction(BaseAction):
     def _launch(self, event):
         event_identifier = event["data"]["actionIdentifier"]
         # Check if identifier is same
-        # - show message that acion may not be triggered on this machine
+        # - show message that action may not be triggered on this machine
         if event_identifier.startswith(self.launch_identifier_with_id):
             return BaseAction._launch(self, event)
 
@@ -219,7 +219,7 @@ class AppplicationsAction(BaseAction):
                 task_name=task_name
             )
 
-        except ApplictionExecutableNotFound as exc:
+        except ApplicationExecutableNotFound as exc:
             self.log.warning(exc.exc_msg)
             return {
                 "success": False,
@@ -251,4 +251,4 @@ class AppplicationsAction(BaseAction):
 
 def register(session):
     """Register action. Called when used as an event plugin."""
-    AppplicationsAction(session).register()
+    ApplicationsAction(session).register()

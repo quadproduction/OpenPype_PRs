@@ -28,13 +28,13 @@ class CreateUSDRender(plugin.HoudiniCreator):
         instance_node = hou.node(instance.get("instance_node"))
 
 
-        parms = {
+        params = {
             # Render frame range
             "trange": 1
         }
         if self.selected_nodes:
-            parms["loppath"] = self.selected_nodes[0].path()
-        instance_node.setParms(parms)
+            params["loppath"] = self.selected_nodes[0].path()
+        instance_node.setParms(params)
 
         # Lock some Avalon attributes
         to_lock = ["family", "id"]

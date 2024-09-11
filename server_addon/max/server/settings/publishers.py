@@ -22,7 +22,7 @@ class ValidateAttributesModel(BaseSettingsModel):
 
         if not success:
             raise BadRequestException(
-                "The attibutes can't be parsed as json object"
+                "The attributes can't be parsed as json object"
             )
         return value
 

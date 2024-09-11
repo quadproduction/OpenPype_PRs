@@ -61,7 +61,7 @@ class Window(QtWidgets.QDialog):
 
         self._suspend_logs = False
 
-        # Use plastique style for specific ocations
+        # Use plastique style for specific occasions
         # TODO set style name via environment variable
         low_keys = {
             key.lower(): key
@@ -113,13 +113,13 @@ class Window(QtWidgets.QDialog):
             QtWidgets.QSizePolicy.Expanding
         )
         button_suspend_logs_widget_layout.addWidget(button_suspend_logs)
-        header_aditional_btns = QtWidgets.QWidget(header_tab_widget)
+        header_additional_btns = QtWidgets.QWidget(header_tab_widget)
 
-        aditional_btns_layout = QtWidgets.QHBoxLayout(header_aditional_btns)
+        additional_btns_layout = QtWidgets.QHBoxLayout(header_additional_btns)
 
         presets_button = widgets.ButtonWithMenu(awesome["filter"])
         presets_button.setEnabled(False)
-        aditional_btns_layout.addWidget(presets_button)
+        additional_btns_layout.addWidget(presets_button)
 
         layout_tab = QtWidgets.QHBoxLayout(header_tab_widget)
         layout_tab.setContentsMargins(0, 0, 0, 0)
@@ -130,7 +130,7 @@ class Window(QtWidgets.QDialog):
 
         # Compress items to the left
         layout_tab.addWidget(header_spacer, 1)
-        layout_tab.addWidget(header_aditional_btns, 0)
+        layout_tab.addWidget(header_additional_btns, 0)
 
         layout = QtWidgets.QHBoxLayout(header_widget)
         layout.setContentsMargins(0, 0, 0, 0)

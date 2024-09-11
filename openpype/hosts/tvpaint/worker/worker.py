@@ -95,7 +95,7 @@ class TVPaintWorkerCommunicator(BaseCommunicator):
         if job is None:
             return
 
-        # Prepare variables used for sendig
+        # Prepare variables used for sending
         success = False
         message = "Unknown function"
         data = None

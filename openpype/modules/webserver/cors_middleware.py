@@ -214,7 +214,7 @@ def cors_middleware(
         else:
             response = await handler(request)
 
-        # Now check origin heaer
+        # Now check origin header
         origin = request.headers.get("Origin")
         # Empty origin - do nothing
         if not origin:

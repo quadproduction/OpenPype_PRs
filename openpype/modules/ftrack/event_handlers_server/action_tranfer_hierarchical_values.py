@@ -14,7 +14,7 @@ from openpype_modules.ftrack.lib.avalon_sync import create_chunks
 class TransferHierarchicalValues(ServerAction):
     """Transfer values across hierarchical attributes.
 
-    Aalso gives ability to convert types meanwhile. That is limited to
+    Also gives ability to convert types meanwhile. That is limited to
     conversions between numbers and strings
     - int <-> float
     - in, float -> string
@@ -166,7 +166,7 @@ class TransferHierarchicalValues(ServerAction):
             ).format(src_attr_id, dst_attr_id))
             return self._selection_interface(session, values)
 
-        # Query custom attrbutes
+        # Query custom attributes
         src_conf = session.query((
             "select id from CustomAttributeConfiguration where id is {}"
         ).format(src_attr_id)).one()
@@ -217,7 +217,7 @@ class TransferHierarchicalValues(ServerAction):
         self.log.debug("Queried source values.")
         failed_entity_ids = []
         if dst_type is not None:
-            self.log.debug("Converting source values to desctination type")
+            self.log.debug("Converting source values to destination type")
             value_by_id = {}
             for attr_value in src_attr_values:
                 entity_id = attr_value["entity_id"]

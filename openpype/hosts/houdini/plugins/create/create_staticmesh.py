@@ -28,12 +28,12 @@ class CreateStaticMesh(plugin.HoudiniCreator):
         # get the created rop node
         instance_node = hou.node(instance.get("instance_node"))
 
-        # prepare parms
+        # prepare params
         output_path = hou.text.expandString(
             "$HIP/pyblish/{}.fbx".format(subset_name)
         )
 
-        parms = {
+        params = {
             "startnode": self.get_selection(),
             "sopoutput": output_path,
             # vertex cache format
@@ -44,8 +44,8 @@ class CreateStaticMesh(plugin.HoudiniCreator):
             "createsubnetroot": pre_create_data.get("createsubnetroot")
         }
 
-        # set parms
-        instance_node.setParms(parms)
+        # set params
+        instance_node.setParms(params)
 
         # Lock any parameters in this list
         to_lock = ["family", "id"]

@@ -312,7 +312,7 @@ class PrepareProjectLocal(BaseAction):
                 items.append({
                     "type": "label",
                     "value": (
-                        "!!! Can't handle Custom attritubte type \"{}\""
+                        "!!! Can't handle Custom attribute type \"{}\""
                         " (key: \"{}\")"
                     ).format(type_name, key)
                 })

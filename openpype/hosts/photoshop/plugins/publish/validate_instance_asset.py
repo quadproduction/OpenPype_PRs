@@ -39,7 +39,7 @@ class ValidateInstanceAsset(OptionalPyblishPluginMixin,
                             pyblish.api.InstancePlugin):
     """Validate the instance asset is the current selected context asset.
 
-    As it might happen that multiple worfiles are opened, switching
+    As it might happen that multiple workfiles are opened, switching
     between them would mess with selected context.
     In that case outputs might be output under wrong asset!
 

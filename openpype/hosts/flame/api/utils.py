@@ -9,7 +9,7 @@ log = Logger.get_logger(__name__)
 
 
 def _sync_utility_scripts(env=None):
-    """ Synchronizing basic utlility scripts for flame.
+    """ Synchronizing basic utility scripts for flame.
 
     To be able to run start OpenPype within Flame we have to copy
     all utility_scripts and additional FLAME_SCRIPT_DIR into

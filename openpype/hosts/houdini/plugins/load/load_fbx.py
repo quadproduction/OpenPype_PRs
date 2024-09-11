@@ -106,7 +106,7 @@ class FbxLoader(load.LoaderPlugin):
         parent_node = obj.createNode("geo", node_name=node_name)
 
         # In older houdini,
-        # when reating a new obj geo node, a default file node will be
+        # when reading a new obj geo node, a default file node will be
         # automatically created.
         # so, we will delete it if exists.
         file_node = parent_node.node("file1")

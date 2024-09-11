@@ -37,7 +37,7 @@ class ValidateModelContent(pyblish.api.InstancePlugin,
             return [instance.data["name"]]
 
         # All children will be included in the extracted export so we also
-        # validate *all* descendents of the set members and we skip any
+        # validate *all* descendants of the set members and we skip any
         # intermediate shapes
         descendants = cmds.listRelatives(content_instance,
                                          allDescendents=True,

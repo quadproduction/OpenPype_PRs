@@ -326,7 +326,7 @@ class InputEntity(EndpointEntity):
             on_change_trigger.append(self.on_change)
             return
 
-        raise NotImplementedError("BUG: Unexcpected part of code.")
+        raise NotImplementedError("BUG: Unexpected part of code.")
 
     def _add_to_studio_default(self, _on_change_trigger):
         self._has_studio_override = True

@@ -6,7 +6,7 @@ def _process_reference(file_url, name, namespace, options):
     """Load files by referencing scene in Maya.
 
     Args:
-        file_url (str): fileapth of the objects to be loaded
+        file_url (str): filepath of the objects to be loaded
         name (str): subset name
         namespace (str): namespace
         options (dict): dict of storing the param

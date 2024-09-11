@@ -9,7 +9,7 @@ from openpype.tools.utils import DeselectableTreeView
 
 from .actions_utils import show_actions_menu
 
-REPRESENTAION_NAME_ROLE = QtCore.Qt.UserRole + 1
+REPRESENTATION_NAME_ROLE = QtCore.Qt.UserRole + 1
 REPRESENTATION_ID_ROLE = QtCore.Qt.UserRole + 2
 PRODUCT_NAME_ROLE = QtCore.Qt.UserRole + 3
 FOLDER_LABEL_ROLE = QtCore.Qt.UserRole + 4
@@ -133,7 +133,7 @@ class RepresentationsModel(QtGui.QStandardItemModel):
         icon = get_qt_icon(repre_icon)
         item.setData(repre_name, QtCore.Qt.DisplayRole)
         item.setData(icon, QtCore.Qt.DecorationRole)
-        item.setData(repre_name, REPRESENTAION_NAME_ROLE)
+        item.setData(repre_name, REPRESENTATION_NAME_ROLE)
         item.setData(repre_id, REPRESENTATION_ID_ROLE)
         item.setData(repre_item.product_name, PRODUCT_NAME_ROLE)
         item.setData(repre_item.folder_label, FOLDER_LABEL_ROLE)

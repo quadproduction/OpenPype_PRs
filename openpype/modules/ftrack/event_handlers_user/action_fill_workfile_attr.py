@@ -249,7 +249,7 @@ class FillWorkfileAttributeAction(BaseAction):
         # Find matching asset documents and map them by ftrack task entities
         # - result stored to 'asset_docs_with_task_entities' is list with
         #   tuple `(asset document, [task entitis, ...])`
-        # Quety all asset documents
+        # Query all asset documents
         asset_docs = list(get_assets(project_name))
         job_entity["data"] = json.dumps({
             "description": "(1/3) Asset documents queried."
@@ -457,16 +457,16 @@ class FillWorkfileAttributeAction(BaseAction):
         task_entities = session.query((
             "select id, name, parent_id from Task where parent_id in ({})"
         ).format(self.join_query_keys(ftrack_ids))).all()
-        task_entitiy_by_parent_id = collections.defaultdict(list)
+        task_entity_by_parent_id = collections.defaultdict(list)
         for task_entity in task_entities:
             parent_id = task_entity["parent_id"]
-            task_entitiy_by_parent_id[parent_id].append(task_entity)
+            task_entity_by_parent_id[parent_id].append(task_entity)
 
         output = []
         for ftrack_id, item in asset_doc_with_task_names_by_id.items():
             asset_doc, task_names = item
             valid_task_entities = []
-            for task_entity in task_entitiy_by_parent_id[ftrack_id]:
+            for task_entity in task_entity_by_parent_id[ftrack_id]:
                 if task_entity["name"] in task_names:
                     valid_task_entities.append(task_entity)
                 else:

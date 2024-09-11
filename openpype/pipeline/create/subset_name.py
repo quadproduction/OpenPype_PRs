@@ -40,7 +40,7 @@ def get_subset_name_template(
         task_name (str): Name of task in which context the subset is created.
         task_type (str): Type of task in which context the subset is created.
         default_template (Union[str, None]): Default template which is used if
-            settings won't find any matching possitibility. Constant
+            settings won't find any matching possibility. Constant
             'DEFAULT_SUBSET_TEMPLATE' is used if not defined.
         project_settings (Union[Dict[str, Any], None]): Prepared settings for
             project. Settings are queried if not passed.

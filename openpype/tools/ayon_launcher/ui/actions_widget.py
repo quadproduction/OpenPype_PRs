@@ -378,7 +378,7 @@ class ActionsWidget(QtWidgets.QWidget):
         self.update()
 
     def _start_animation(self, index):
-        # Offset refresh timout
+        # Offset refresh timeout
         model_index = self._proxy_model.mapToSource(index)
         if not model_index.isValid():
             return

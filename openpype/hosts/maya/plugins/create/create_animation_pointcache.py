@@ -150,6 +150,6 @@ class CreatePointCache(plugin.MayaCreator):
         )
         instance_node = instance.get("instance_node")
 
-        # For Arnold standin proxy
+        # For Arnold standing proxy
         proxy_set = cmds.sets(name=instance_node + "_proxy_SET", empty=True)
         cmds.sets(proxy_set, forceElement=instance_node)

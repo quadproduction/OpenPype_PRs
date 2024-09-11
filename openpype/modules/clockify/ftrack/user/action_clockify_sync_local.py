@@ -19,7 +19,7 @@ class SyncClockifyLocal(BaseAction):
 
     def __init__(self, *args, **kwargs):
         super(SyncClockifyLocal, self).__init__(*args, **kwargs)
-        #: CLockifyApi
+        #: ClockifyApi
         self.clockify_api = ClockifyAPI()
 
     def discover(self, session, entities, event):

@@ -140,7 +140,7 @@ class SyncToAvalonServer(ServerAction):
 
             time_1 = time.time()
 
-            self.entities_factory.set_cutom_attributes()
+            self.entities_factory.set_custom_attributes()
             time_2 = time.time()
 
             # This must happen before all filtering!!!
@@ -166,7 +166,7 @@ class SyncToAvalonServer(ServerAction):
                 "preparation <{}>".format(time_1 - time_start)
             )
             self.log.debug(
-                "set_cutom_attributes <{}>".format(time_2 - time_1)
+                "set_custom_attributes <{}>".format(time_2 - time_1)
             )
             self.log.debug(
                 "prepare_avalon_entities <{}>".format(time_3 - time_2)

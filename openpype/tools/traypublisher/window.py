@@ -2,7 +2,7 @@
 
 Adds ability to select project using overlay widget with list of projects.
 
-Tray publisher can be considered as host implementeation with creators and
+Tray publisher can be considered as host implementation with creators and
 publishing plugins.
 """
 

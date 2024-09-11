@@ -50,7 +50,7 @@ class ValidateGizmo(pyblish.api.InstancePlugin):
             connections_out = nuke.allNodes('Output')
             if len(connections_out) > 1:
                 msg_multiple_outputs = (
-                    "Only one outcoming connection from "
+                    "Only one outgoing connection from "
                     "\"{}\" is allowed").format(instance.data["name"])
 
                 raise PublishXmlValidationError(

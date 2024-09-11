@@ -108,7 +108,7 @@ class User(ftrack_api.entity.base.Entity):
         return timelog
 
     def send_invite(self):
-        '''Send a invation email to the user'''
+        '''Send an invitation email to the user'''
 
         self.session.send_user_invite(
             self

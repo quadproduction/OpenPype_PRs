@@ -115,7 +115,7 @@ class ApplicationAction(LauncherAction):
         """Process the full Application action"""
 
         from openpype.lib import (
-            ApplictionExecutableNotFound,
+            ApplicationExecutableNotFound,
             ApplicationLaunchFailed,
         )
 
@@ -130,7 +130,7 @@ class ApplicationAction(LauncherAction):
                 **self.data
             )
 
-        except ApplictionExecutableNotFound as exc:
+        except ApplicationExecutableNotFound as exc:
             details = exc.details
             msg = exc.msg
             log_msg = str(msg)
@@ -221,7 +221,7 @@ def get_action_icon(action):
     """Get action icon info.
 
     Args:
-        action (LacunherAction): Action instance.
+        action (LauncherAction): Action instance.
 
     Returns:
         dict[str, str]: Icon info.

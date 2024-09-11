@@ -32,7 +32,7 @@ class CreateCompositeSequence(plugin.HoudiniCreator):
             hou.text.expandString("$HIP/pyblish/"),
             "{}.$F4{}".format(subset_name, self.ext)
         )
-        parms = {
+        params = {
             "trange": 1,
             "copoutput": filepath
         }
@@ -41,9 +41,9 @@ class CreateCompositeSequence(plugin.HoudiniCreator):
             if len(self.selected_nodes) > 1:
                 raise CreatorError("More than one item selected.")
             path = self.selected_nodes[0].path()
-            parms["coppath"] = path
+            params["coppath"] = path
 
-        instance_node.setParms(parms)
+        instance_node.setParms(params)
 
         # Manually set f1 & f2 to $FSTART and $FEND respectively
         # to match other Houdini nodes default.

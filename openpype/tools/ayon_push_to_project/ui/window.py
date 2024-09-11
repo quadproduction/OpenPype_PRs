@@ -218,7 +218,7 @@ class PushToContextSelectWindow(QtWidgets.QWidget):
         self._user_input_changed_timer = user_input_changed_timer
         # Store current value on input text change
         #   The value is unset when is passed to controller
-        # The goal is to have controll over changes happened during user change
+        # The goal is to have control over changes happened during user change
         #   in UI and controller auto-changes
         self._variant_input_text = None
         self._new_folder_name_input_text = None
@@ -423,7 +423,7 @@ class PushToContextSelectWindow(QtWidgets.QWidget):
         self._main_thread_timer_can_stop = False
         self._main_thread_timer.start()
         self._main_layout.setCurrentWidget(self._overlay_widget)
-        self._overlay_label.setText("Submittion started")
+        self._overlay_label.setText("Submission started")
 
     def _on_controller_submit_end(self):
         self._main_thread_timer_can_stop = True

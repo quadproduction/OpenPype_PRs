@@ -9,7 +9,7 @@ CONTEXT_GROUP = "__ContextGroup__"
 CONVERTOR_ITEM_GROUP = "Incompatible subsets"
 
 # Allowed symbols for subset name (and variant)
-# - characters, numbers, unsercore and dash
+# - characters, numbers, underscore and dash
 VARIANT_TOOLTIP = (
     "Variant may contain alphabetical characters (a-Z)"
     "\nnumerical characters (0-9) dot (\".\") or underscore (\"_\")."

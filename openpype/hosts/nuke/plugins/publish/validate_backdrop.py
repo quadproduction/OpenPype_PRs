@@ -73,7 +73,7 @@ class ValidateBackdrop(
         connections_out = instance.data["transientData"]["nodeConnectionsOut"]
 
         msg_multiple_outputs = (
-            "Only one outcoming connection from "
+            "Only one outgoing connection from "
             "\"{}\" is allowed").format(instance.data["name"])
 
         if len(connections_out.keys()) > 1:

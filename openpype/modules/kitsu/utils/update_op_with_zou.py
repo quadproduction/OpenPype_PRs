@@ -20,7 +20,7 @@ from openpype.lib import Logger
 
 log = Logger.get_logger(__name__)
 
-# Accepted namin pattern for OP
+# Accepted naming pattern for OP
 naming_pattern = re.compile("^[a-zA-Z0-9_.]*$")
 
 

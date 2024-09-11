@@ -3,7 +3,7 @@ from openpype.pipeline import PublishXmlValidationError
 
 
 # TODO @iLLiCiTiT add repair action to disable instances?
-class ValidateLayersVisiblity(pyblish.api.InstancePlugin):
+class ValidateLayersVisibility(pyblish.api.InstancePlugin):
     """Validate existence of renderPass layers."""
 
     label = "Validate Layers Visibility"

@@ -569,7 +569,7 @@ class AfterEffectsServerStub():
 
     def add_item_instead_placeholder(self, placeholder_item_id, item_id):
         """
-            Adds item_id to layers where plaeholder_item_id is present.
+            Adds item_id to layers where placeholder_item_id is present.
 
             1 placeholder could result in multiple loaded containers (eg items)
 

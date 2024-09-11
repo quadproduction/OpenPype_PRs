@@ -69,7 +69,7 @@ class ProjectItem:
         return cls(**data)
 
 
-def _get_project_items_from_entitiy(projects):
+def _get_project_items_from_entity(projects):
     """
 
     Args:
@@ -155,4 +155,4 @@ class ProjectsModel(object):
 
     def _query_projects(self):
         projects = ayon_api.get_projects(fields=["name", "active", "library"])
-        return _get_project_items_from_entitiy(projects)
+        return _get_project_items_from_entity(projects)

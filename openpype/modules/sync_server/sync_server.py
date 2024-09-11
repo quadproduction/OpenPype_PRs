@@ -404,7 +404,7 @@ class SyncServerThread(threading.Thread):
                                                tree,
                                                site_preset))
                                     task_files_to_process.append(task)
-                                    # store info for exception handlingy
+                                    # store info for exception handling
                                     files_processed_info.append((file,
                                                                  sync,
                                                                  remote_site,

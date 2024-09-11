@@ -52,7 +52,7 @@ class IntegrateHeroVersion(pyblish.api.InstancePlugin):
     ]
     # QUESTION/TODO this process should happen on server if crashed due to
     # permissions error on files (files were used or user didn't have perms)
-    # *but all other plugins must be sucessfully completed
+    # *but all other plugins must be successfully completed
 
     _default_template_name = "hero"
 

@@ -18,7 +18,7 @@ class ValidateUnrealStaticMeshName(pyblish.api.InstancePlugin,
                                    OptionalPyblishPluginMixin):
     """Validate name of Unreal Static Mesh
 
-    Unreals naming convention states that staticMesh should start with `SM`
+    Unreal naming convention states that staticMesh should start with `SM`
     prefix - SM_[Name]_## (Eg. SM_sube_01).These prefixes can be configured
     in Settings UI. This plugin also validates other types of
     meshes - collision meshes:

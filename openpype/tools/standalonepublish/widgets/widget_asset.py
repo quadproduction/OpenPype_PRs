@@ -153,7 +153,7 @@ class AssetWidget(QtWidgets.QWidget):
 
         # Project
         self.combo_projects = QtWidgets.QComboBox()
-        # Change delegate so stylysheets are applied
+        # Change delegate so stylesheets are applied
         project_delegate = QtWidgets.QStyledItemDelegate(self.combo_projects)
         self.combo_projects.setItemDelegate(project_delegate)
 

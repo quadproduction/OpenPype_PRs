@@ -26,7 +26,7 @@ class CreateAlembicCamera(plugin.HoudiniCreator):
             pre_create_data)  # type: CreatedInstance
 
         instance_node = hou.node(instance.get("instance_node"))
-        parms = {
+        params = {
             "filename": hou.text.expandString(
                 "$HIP/pyblish/{}.abc".format(subset_name)),
             "use_sop_path": False,
@@ -39,9 +39,9 @@ class CreateAlembicCamera(plugin.HoudiniCreator):
             # Split the node path into the first root and the remainder
             # So we can set the root and objects parameters correctly
             _, root, remainder = path.split("/", 2)
-            parms.update({"root": "/" + root, "objects": remainder})
+            params.update({"root": "/" + root, "objects": remainder})
 
-        instance_node.setParms(parms)
+        instance_node.setParms(params)
 
         # Lock the Use Sop Path setting so the
         # user doesn't accidentally enable it.

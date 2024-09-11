@@ -57,7 +57,7 @@ class ValidateLookNoDefaultShaders(pyblish.api.InstancePlugin):
                 # Explicitly log each individual "wrong" connection.
                 for s in shaders:
                     if s in cls.DEFAULT_SHADERS:
-                        cls.log.error("Node has unallowed connection to "
+                        cls.log.error("Node has disallowed connection to "
                                       "'{}': {}".format(s, node))
 
                 invalid.add(node)

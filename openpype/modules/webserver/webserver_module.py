@@ -133,7 +133,7 @@ class WebServerModule(OpenPypeModule, ITrayService):
             port_from (int): Port number which is checked as first.
             port_to (int): Last port that is checked in sequence from entered
                 `port_from`. Only `port_from` is checked if is not entered.
-                Nothing is processed if is equeal to `port_from`!
+                Nothing is processed if is equal to `port_from`!
             exclude_ports (list, tuple, set): List of ports that won't be
                 checked form entered range.
             host (str): Host where will check for free ports. Set to

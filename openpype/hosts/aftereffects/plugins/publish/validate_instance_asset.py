@@ -37,7 +37,7 @@ class ValidateInstanceAssetRepair(pyblish.api.Action):
 class ValidateInstanceAsset(pyblish.api.InstancePlugin):
     """Validate the instance asset is the current selected context asset.
 
-        As it might happen that multiple worfiles are opened at same time,
+        As it might happen that multiple workfiles are opened at same time,
         switching between them would mess with selected context. (From Launcher
         or Ftrack).
 

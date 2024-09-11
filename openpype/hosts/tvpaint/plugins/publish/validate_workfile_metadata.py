@@ -22,7 +22,7 @@ class ValidateWorkfileMetadataRepair(pyblish.api.Action):
 
 
 class ValidateWorkfileMetadata(pyblish.api.ContextPlugin):
-    """Validate if wokrfile contain required metadata for publising."""
+    """Validate if workfile contain required metadata for publishing."""
 
     label = "Validate Workfile Metadata"
     order = pyblish.api.ValidatorOrder

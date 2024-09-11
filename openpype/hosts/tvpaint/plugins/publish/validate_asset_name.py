@@ -13,7 +13,7 @@ from openpype.hosts.tvpaint.api.pipeline import (
 class FixAssetNames(pyblish.api.Action):
     """Repair the asset names.
 
-    Change instanace metadata in the workfile.
+    Change instance metadata in the workfile.
     """
 
     label = "Repair"

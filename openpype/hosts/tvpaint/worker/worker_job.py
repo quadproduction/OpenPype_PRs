@@ -317,7 +317,7 @@ class TVPaintCommands:
 
     @abstractmethod
     def _prepare_workfile(self, workfile):
-        """Modification of workfile path on initialization to match platorm."""
+        """Modification of workfile path on initialization to match platform."""
         pass
 
     def job_queue_root(self):

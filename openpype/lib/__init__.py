@@ -127,7 +127,7 @@ from .local_settings import (
 
 from .applications import (
     ApplicationLaunchFailed,
-    ApplictionExecutableNotFound,
+    ApplicationExecutableNotFound,
     ApplicationNotFound,
     ApplicationManager,
 
@@ -245,7 +245,7 @@ __all__ = [
     "is_admin_password_required",
 
     "ApplicationLaunchFailed",
-    "ApplictionExecutableNotFound",
+    "ApplicationExecutableNotFound",
     "ApplicationNotFound",
     "ApplicationManager",
     "PreLaunchHook",

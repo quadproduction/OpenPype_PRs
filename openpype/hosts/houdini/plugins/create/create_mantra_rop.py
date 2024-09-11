@@ -40,7 +40,7 @@ class CreateMantraROP(plugin.HoudiniCreator):
             ext=ext,
         )
 
-        parms = {
+        params = {
             # Render Frame Range
             "trange": 1,
             # Mantra ROP Setting
@@ -53,8 +53,8 @@ class CreateMantraROP(plugin.HoudiniCreator):
                     export_dir=hou.text.expandString("$HIP/pyblish/ifd/"),
                     subset_name=subset_name,
                 )
-            parms["soho_outputmode"] = 1
-            parms["soho_diskfile"] = ifd_filepath
+            params["soho_outputmode"] = 1
+            params["soho_diskfile"] = ifd_filepath
 
         if self.selected_nodes:
             # If camera found in selection
@@ -67,12 +67,12 @@ class CreateMantraROP(plugin.HoudiniCreator):
             if not camera:
                 self.log.warning("No render camera found in selection")
 
-            parms.update({"camera": camera or ""})
+            params.update({"camera": camera or ""})
 
         custom_res = pre_create_data.get("override_resolution")
         if custom_res:
-            parms.update({"override_camerares": 1})
-        instance_node.setParms(parms)
+            params.update({"override_camerares": 1})
+        instance_node.setParms(params)
 
         # Lock some Avalon attributes
         to_lock = ["family", "id"]

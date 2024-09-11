@@ -181,7 +181,7 @@ class NukePlaceholderLoadPlugin(NukePlaceholderPlugin, PlaceholderLoadMixin):
                 continue
 
             placeholder_data = self._parse_placeholder_node_data(node)
-            # TODO do data validations and maybe updgrades if are invalid
+            # TODO do data validations and maybe upgrades if are invalid
             output.append(
                 LoadPlaceholderItem(node_name, placeholder_data, self)
             )
@@ -885,7 +885,7 @@ class NukePlaceholderCreatePlugin(
                     input_node.setInput(0, node)
 
     def _create_sib_copies(self, placeholder):
-        """ creating copies of the palce_holder siblings (the ones who were
+        """ creating copies of the place_holder siblings (the ones who were
         created with it) for the new nodes added
 
         Returns :

@@ -506,7 +506,7 @@ class ProjectsCombobox(QtWidgets.QWidget):
     def set_select_item_visible(self, visible):
         self._select_item_visible = visible
         self._projects_model.set_select_item_visible(visible)
-        self._update_select_item_visiblity()
+        self._update_select_item_visibility()
 
     def set_libraries_separator_visible(self, visible):
         self._projects_model.set_libraries_separator_visible(visible)
@@ -523,7 +523,7 @@ class ProjectsCombobox(QtWidgets.QWidget):
     def set_library_filter_enabled(self, enabled):
         return self._projects_proxy_model.set_library_filter_enabled(enabled)
 
-    def _update_select_item_visiblity(self, **kwargs):
+    def _update_select_item_visibility(self, **kwargs):
         if not self._select_item_visible:
             return
         if "project_name" not in kwargs:
@@ -539,7 +539,7 @@ class ProjectsCombobox(QtWidgets.QWidget):
             return
         project_name = self._projects_combobox.itemData(
             idx, PROJECT_NAME_ROLE)
-        self._update_select_item_visiblity(project_name=project_name)
+        self._update_select_item_visibility(project_name=project_name)
         self._controller.set_selected_project(project_name)
         self.selection_changed.emit()
 
@@ -548,7 +548,7 @@ class ProjectsCombobox(QtWidgets.QWidget):
         self._projects_proxy_model.invalidateFilter()
         if self._expected_selection:
             self._set_expected_selection()
-        self._update_select_item_visiblity()
+        self._update_select_item_visibility()
         self.refreshed.emit()
 
     def _on_projects_refresh_finished(self, event):

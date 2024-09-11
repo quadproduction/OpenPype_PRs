@@ -726,7 +726,7 @@ class CleanUpFarmModel(BaseSettingsModel):
     enabled: bool = SettingsField(True)
 
 
-class PublishPuginsModel(BaseSettingsModel):
+class PublishPluginsModel(BaseSettingsModel):
     CollectAnatomyInstanceData: CollectAnatomyInstanceDataModel = (
         SettingsField(
             default_factory=CollectAnatomyInstanceDataModel,

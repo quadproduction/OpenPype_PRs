@@ -35,7 +35,7 @@ Data in json file is nested dictionary. Keys in first dictionary level
 represents Ftrack entity type (task, show, assetversion, user, list, asset)
 and dictionary value define attribute.
 
-There is special key for hierchical attributes `is_hierarchical`.
+There is special key for hierarchical attributes `is_hierarchical`.
 
 Entity types `task` requires to define task object type (Folder, Shot,
 Sequence, Task, Library, Milestone, Episode, Asset Build, etc.) at second
@@ -155,7 +155,7 @@ class CustomAttributes(BaseAction):
     )
     hierarchical_key = "is_hierarchical"
 
-    type_posibilities = (
+    type_possibilities = (
         "text", "boolean", "date", "enumerator",
         "dynamic enumerator", "number"
     )
@@ -585,7 +585,7 @@ class CustomAttributes(BaseAction):
                     "BUG: Key \"{}\" is required".format(key)
                 )
 
-        if attr['type'].lower() not in self.type_posibilities:
+        if attr['type'].lower() not in self.type_possibilities:
             raise CustAttrException(
                 'Type {} is not valid'.format(attr['type'])
             )
@@ -710,7 +710,7 @@ class CustomAttributes(BaseAction):
                     output.append(self.security_roles[role_name])
                 else:
                     raise CustAttrException((
-                        "Securit role \"{}\" was not found in Ftrack."
+                        "Security role \"{}\" was not found in Ftrack."
                     ).format(role_name))
         return output
 

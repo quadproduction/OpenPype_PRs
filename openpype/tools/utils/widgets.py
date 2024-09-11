@@ -619,7 +619,7 @@ class OptionalActionWidget(QtWidgets.QWidget):
 
         icon = QtWidgets.QLabel(body_widget)
         label = QtWidgets.QLabel(label, body_widget)
-        # (NOTE) For removing ugly QLable shadow FX when highlighted in Nuke.
+        # (NOTE) For removing ugly QLabel shadow FX when highlighted in Nuke.
         #   See https://stackoverflow.com/q/52838690/4145300
         label.setStyle(QtWidgets.QStyleFactory.create("Plastique"))
         option = OptionBox(body_widget)
@@ -733,7 +733,7 @@ class SeparatorWidget(QtWidgets.QFrame):
 
     Args:
         size (int): Size of separator (width or height).
-        orientation (Qt.Horizontal|Qt.Vertical): Orintation of widget.
+        orientation (Qt.Horizontal|Qt.Vertical): Orientation of widget.
         parent (QtWidgets.QWidget): Parent widget.
     """
 
@@ -769,7 +769,7 @@ class SeparatorWidget(QtWidgets.QFrame):
         if self._orientation == orientation:
             return
 
-        # Reset min/max sizes in opossite direction
+        # Reset min/max sizes in opposite direction
         if self._orientation == QtCore.Qt.Vertical:
             self.setMinimumHeight(0)
             self.setMaximumHeight(self._maximum_height)

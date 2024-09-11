@@ -2,7 +2,7 @@ from openpype_modules.ftrack.lib import ServerAction
 
 
 class MultipleNotesServer(ServerAction):
-    """Action adds same note for muliple AssetVersions.
+    """Action adds same note for multiple AssetVersions.
 
     Note is added to selection of AssetVersions. Note is created with user
     who triggered the action. It is possible to define note category of note.

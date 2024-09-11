@@ -36,7 +36,7 @@ class ProjectBar(QtWidgets.QWidget):
         super(ProjectBar, self).__init__(parent)
 
         project_combobox = QtWidgets.QComboBox(self)
-        # Change delegate so stylysheets are applied
+        # Change delegate so stylesheets are applied
         project_delegate = QtWidgets.QStyledItemDelegate(project_combobox)
         project_combobox.setItemDelegate(project_delegate)
         model = ProjectModel(launcher_model)
@@ -256,7 +256,7 @@ class ActionBar(QtWidgets.QWidget):
         self.update()
 
     def _start_animation(self, index):
-        # Offset refresh timout
+        # Offset refresh timeout
         self._launcher_model.start_refresh_timer()
         action_id = index.data(ACTION_ID_ROLE)
         item = self.model.items_by_id.get(action_id)
@@ -325,7 +325,7 @@ class ActionBar(QtWidgets.QWidget):
             self.action_clicked.emit(action)
             return
 
-        # Offset refresh timout
+        # Offset refresh timeout
         self._launcher_model.start_refresh_timer()
 
         actions = index.data(ACTION_ROLE)

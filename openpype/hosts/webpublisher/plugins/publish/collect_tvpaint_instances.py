@@ -92,16 +92,16 @@ class CollectTVPaintInstances(pyblish.api.ContextPlugin):
             render_layer = result.group("layer")
             render_pass = result.group("pass")
 
-            render_pass_maping = layers_by_layer_and_pass.get(
+            render_pass_mapping = layers_by_layer_and_pass.get(
                 render_layer
             )
-            if render_pass_maping is None:
-                render_pass_maping = {}
-                layers_by_layer_and_pass[render_layer] = render_pass_maping
+            if render_pass_mapping is None:
+                render_pass_mapping = {}
+                layers_by_layer_and_pass[render_layer] = render_pass_mapping
 
-            if render_pass not in render_pass_maping:
-                render_pass_maping[render_pass] = []
-            render_pass_maping[render_pass].append(copy.deepcopy(layer))
+            if render_pass not in render_pass_mapping:
+                render_pass_mapping[render_pass] = []
+            render_pass_mapping[render_pass].append(copy.deepcopy(layer))
 
         layers_by_render_layer = {}
         for render_layer, render_passes in layers_by_layer_and_pass.items():

@@ -52,7 +52,7 @@ def activeProject():
     global gTrackedActiveProject
     activeProject = None
 
-    # Case 1 : Look for what the current Viewr tells us - this might not be what we want, and relies on hiero.ui.currentViewer() being robust.
+    # Case 1 : Look for what the current Viewer tells us - this might not be what we want, and relies on hiero.ui.currentViewer() being robust.
     cv = hiero.ui.currentViewer().player().sequence()
     if hasattr(cv, "project"):
         activeProject = cv.project()

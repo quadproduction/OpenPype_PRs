@@ -54,7 +54,7 @@ class ExportPresetsMappingModel(BaseSettingsModel):
     active: bool = SettingsField(True, title="Is active")
     export_type: str = SettingsField(
         "File Sequence",
-        title="Eport clip type",
+        title="Export clip type",
         enum_resolver=lambda: ["Movie", "File Sequence", "Sequence Publish"]
     )
     ext: str = SettingsField("exr", title="Output extension")
@@ -121,7 +121,7 @@ class IntegrateBatchGroupModel(BaseSettingsModel):
     )
 
 
-class PublishPuginsModel(BaseSettingsModel):
+class PublishPluginsModel(BaseSettingsModel):
     CollectTimelineInstances: CollectTimelineInstancesModel = SettingsField(
         default_factory=CollectTimelineInstancesModel,
         title="Collect Timeline Instances"

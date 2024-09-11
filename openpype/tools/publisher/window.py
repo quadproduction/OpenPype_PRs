@@ -171,12 +171,12 @@ class PublisherWindow(QtWidgets.QDialog):
         content_stacked_widget = QtWidgets.QWidget(content_widget)
 
         content_layout = QtWidgets.QVBoxLayout(content_widget)
-        marings = content_layout.contentsMargins()
-        marings.setLeft(marings.left() * 2)
-        marings.setRight(marings.right() * 2)
-        marings.setTop(marings.top() * 2)
-        marings.setBottom(0)
-        content_layout.setContentsMargins(marings)
+        margins = content_layout.contentsMargins()
+        margins.setLeft(margins.left() * 2)
+        margins.setRight(margins.right() * 2)
+        margins.setTop(margins.top() * 2)
+        margins.setBottom(0)
+        content_layout.setContentsMargins(margins)
         content_layout.addWidget(content_stacked_widget, 1)
 
         # Overview - create and attributes part
@@ -828,7 +828,7 @@ class PublisherWindow(QtWidgets.QDialog):
 
     def _on_publish_reset(self):
         self._create_tab.setEnabled(True)
-        self._set_comment_input_visiblity(True)
+        self._set_comment_input_visibility(True)
         self._set_publish_overlay_visibility(False)
         self._set_publish_visibility(False)
         self._set_footer_enabled(False)
@@ -863,7 +863,7 @@ class PublisherWindow(QtWidgets.QDialog):
         self._validate_btn.setEnabled(False)
         self._publish_btn.setEnabled(False)
 
-        self._set_comment_input_visiblity(False)
+        self._set_comment_input_visibility(False)
         self._set_publish_visibility(True)
         self._set_publish_overlay_visibility(True)
 
@@ -937,7 +937,7 @@ class PublisherWindow(QtWidgets.QDialog):
         self.set_context_label(context_title)
         self._update_publish_details_widget()
 
-    def _set_comment_input_visiblity(self, visible):
+    def _set_comment_input_visibility(self, visible):
         self._comment_input.setVisible(visible)
         self._footer_spacer.setVisible(not visible)
 

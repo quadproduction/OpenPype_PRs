@@ -562,7 +562,7 @@ class IntegrateFtrackInstance(pyblish.api.InstancePlugin):
         ]
         # Skip if there are not video streams
         #   - exr is special case which can have issues with reading through
-        #       ffmpegh but we want to set fps for it
+        #       ffmpeg but we want to set fps for it
         if not video_streams and extension not in [".exr"]:
             return metadata
 

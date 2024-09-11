@@ -1,6 +1,6 @@
 
 """
-OpenPype Flame api constances
+OpenPype Flame api constants
 """
 # OpenPype marker workflow variables
 MARKER_NAME = "OpenPypeData"

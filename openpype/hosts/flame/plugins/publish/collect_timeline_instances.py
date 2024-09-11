@@ -36,7 +36,7 @@ class CollectTimelineInstances(pyblish.api.ContextPlugin):
         self.otio_timeline = context.data["otioTimeline"]
         self.fps = context.data["fps"]
 
-        # process all sellected
+        # process all selected
         for segment in selected_segments:
             # get openpype tag data
             marker_data = opfapi.get_segment_data_marker(segment)
@@ -232,32 +232,32 @@ class CollectTimelineInstances(pyblish.api.ContextPlugin):
             if a_type in ("number", "float"):
                 pattern = NUM_PATERN
 
-            res_goup = pattern.findall(value)
+            res_group = pattern.findall(value)
 
             # raise if nothing is found as it is not correctly defined
-            if not res_goup:
+            if not res_group:
                 raise ValueError((
                     "Value for `{}` attribute is not "
                     "set correctly: `{}`").format(a_name, split))
 
             if "string" in a_type:
-                _value = res_goup[0]
+                _value = res_group[0]
             if "float" in a_type:
-                _value = float(res_goup[0])
+                _value = float(res_group[0])
             if "number" in a_type:
-                _value = int(res_goup[0])
+                _value = int(res_group[0])
 
             attributes["xml_overrides"][a_name] = _value
 
         # condition for resolution in key
         if "resolution" in key.lower():
-            res_goup = NUM_PATERN.findall(value)
-            # check if axpect was also defined
+            res_group = NUM_PATERN.findall(value)
+            # check if aspect was also defined
             # 1920x1080x1.5
-            aspect = res_goup[2] if len(res_goup) > 2 else 1
+            aspect = res_group[2] if len(res_group) > 2 else 1
 
-            width = int(res_goup[0])
-            height = int(res_goup[1])
+            width = int(res_group[0])
+            height = int(res_group[1])
             pixel_ratio = float(aspect)
             attributes["xml_overrides"].update({
                 "width": width,
